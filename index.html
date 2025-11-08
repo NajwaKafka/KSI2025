@@ -1,1 +1,74 @@
-<h1>Halaman Tambah Data</h1>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Data Mahasiswa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff0f5;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #d63384;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #a60055;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #d63384;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #d63384;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #a60055;
+        }
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tambah Mahasiswa</h1>
+        <form action="tambah.php" method="POST">
+            <label>Nama:</label>
+            <input type="text" name="nama" required>
+
+            <label>NIM:</label>
+            <input type="text" name="nim" required>
+
+            <button type="submit" name="submit">Simpan</button>
+        </form>
+        <?php if(isset($_GET['success'])) { ?>
+            <div class="success">Data berhasil ditambahkan!</div>
+        <?php } ?>
+    </div>
+</body>
+</html>
